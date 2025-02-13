@@ -1,0 +1,11 @@
+.details-descript {
+  margin-top: 10rem;;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.details-descript > img {
+  width: 50%;
+}
