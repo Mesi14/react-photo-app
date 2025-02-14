@@ -6,7 +6,7 @@ function Details() {
     <div className="details-descript">
       <img
         alt="cabs in the city"
-        src={require("../assets/cabs.jpg")}
+        src={"assets/cabs.jpg"}
       />
       <div>
         <h3>Title</h3>

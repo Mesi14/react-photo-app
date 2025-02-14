@@ -1,74 +1,74 @@
-[
+{ "photos": [
   {
     "id": 18,
-    "srcThumbnail": "./Assets/Images/railway.jpg",
-    "srcImage": "./Assets/Images/railway.jpg", 
+    "srcThumbnail": "assets/railway.jpg",
+    "srcImage": "assets/railway.jpg", 
     "title": "Railway to the end of the world",
     "shortDesc": "just a way",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. sdgosdglidfa jhogi;hdjfiog hjrghiodfsoig hadfgo[i ahofdg l Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id":21,
-    "srcThumbnail": "./Assets/Images/forest.jpg",
-    "srcImage": "./Assets/Images/forest.jpg", 
+    "srcThumbnail": "assets/forest.jpg",
+    "srcImage": "assets/forest.jpg", 
     "title": "In the forest",
     "shortDesc": "The wilderness",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id":25,
-    "srcThumbnail": "./Assets/Images/cabs.jpg",
-    "srcImage": "./Assets/Images/cabs.jpg", 
+    "srcThumbnail": "assets/cabs.jpg",
+    "srcImage": "assets/cabs.jpg", 
     "title": "Cabs in the city",
     "shortDesc": "Oh, those yellow cabs...they can take you everywhere!",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id":30,
-    "srcThumbnail": "./Assets/Images/onion.jpg",
-    "srcImage": "./Assets/Images/onion.jpg",  
+    "srcThumbnail": "assets/onion.jpg",
+    "srcImage": "assets/onion.jpg",  
     "title": "Onions",
     "shortDesc": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id":35,
-    "srcThumbnail": "./Assets/Images/typewriter.jpg",
-    "srcImage": "./Assets/Images/typewriter.jpg",  
+    "srcThumbnail": "assets/typewriter.jpg",
+    "srcImage": "assets/typewriter.jpg",  
     "title": "Typewriter of the 80's",
     "shortDesc": "Lorem Ipsum dolor sic amet",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id":39,
-    "srcThumbnail": "./Assets/Images/water.jpg",
-    "srcImage": "./Assets/Images/water.jpg", 
+    "srcThumbnail": "assets/water.jpg",
+    "srcImage": "assets/water.jpg", 
     "title": "The ocean",
     "shortDesc": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id": 40,
-    "srcThumbnail": "./Assets/Images/workInTheCity.jpg",
-    "srcImage": "./Assets/Images/workInTheCity.jpg", 
+    "srcThumbnail": "assets/workInTheCity.jpg",
+    "srcImage": "assets/workInTheCity.jpg", 
     "title": "Work hard, get your reward!",
     "shortDesc": "It is hard work o keep the city up, alive and modern.",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. sdgosdglidfa jhogi;hdjfiog hjrghiodfsoig hadfgo[i ahofdg l Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id": 42,
-    "srcThumbnail": "./Assets/Images/computer.jpg",
-    "srcImage": "./Assets/Images/computer.jpg",  
+    "srcThumbnail": "assets/computer.jpg",
+    "srcImage": "assets/computer.jpg",  
     "title": "Laptop",
     "shortDesc": "Just code it...I forgot to say...but code it right!",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. sdgosdglidfa jhogi;hdjfiog hjrghiodfsoig hadfgo[i ahofdg l Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
   },
   {
     "id": 50,
-    "srcThumbnail": "./Assets/Images/sunshine.jpg",
-    "srcImage": "./Assets/Images/sunshine.jpg",  
+    "srcThumbnail": "assets/sunshine.jpg",
+    "srcImage": "assets/sunshine.jpg",  
     "title": "The Sun",
     "shortDesc": "The sun that keeps you warm and takes your mood up to the sky",
     "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. sdgosdglidfa jhogi;hdjfiog hjrghiodfsoig hadfgo[i ahofdg l Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-  }
-]
+  }]
+}
