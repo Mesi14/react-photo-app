@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
+        <Container className="main-container">
           <Navbar.Brand href="#home">Photo App</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>

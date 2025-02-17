@@ -27,7 +27,7 @@ function Details() {
   return (
     <div className="details-descript">
       <img alt={photo.title} src={`/${photo.srcImage}`} />
-      <div>
+      <div className="text-details">
         <h3>{photo.title}</h3>
         <p>{photo.desc}</p>
         <Button variant="primary">
