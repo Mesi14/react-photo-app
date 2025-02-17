@@ -13,7 +13,6 @@ const Photos = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:3001/photos");
-      console.log("response", response);
       setPhotosState(response.data);
     } catch (error) {
       console.log("fetching error", error);
