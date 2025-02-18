@@ -6,22 +6,22 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import axios from "axios";
 
 function Details() {
-  const [photo, setPhoto] = useState({});
   const parameters = useParams();
+  const [photo, setPhoto] = useState([]);
   const [validated, setValidated] = useState(false);
   const [singleComment, setSingleComment] = useState("");
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const resp = await axios.get(`http://localhost:3001/photos/${parameters.imgId}`);
-        console.log(resp.data)
         setPhoto(resp.data);
       } catch (error) {
         console.log("this error is from single photo page", error);
       }
     };
-    window.setTimeout(() => fetchData(), 100)
+    fetchData();
   }, [parameters.imgId]);
   
   const handleSubmit = (event) => {
@@ -39,18 +39,24 @@ function Details() {
 
   const makeComment = async () => {
     try {
-      const currPhotoState = { ...photo };
-      currPhotoState.comments.push(singleComment);
-      setPhoto(currPhotoState);
+      const currPhoto = { ...photo };
+      currPhoto.comments.push(`@${user}: ${singleComment}`);
+      setPhoto(currPhoto);
       setSingleComment("");
+      setUser("");
       await axios.put(`http://localhost:3001/photos/${parameters.imgId}`, photo)
     } catch (error) {
       console.log("this is the error from making a comment", error);
     }
   }
 
+
   const onTextAreaChange = (ev) => {
     setSingleComment(ev.target.value);
+  }
+
+  const onUserChange = (ev) => {
+    setUser(ev.target.value)
   }
 
   return (
@@ -65,15 +71,15 @@ function Details() {
           </Button>
         </div>
       </div>
-      <div>
+      <div className="comments">
         <ListGroup>
-          <ListGroup.Item>All comments</ListGroup.Item>
-          {photo.comments !== null ? <ListGroup.Item>No comments yet!</ListGroup.Item> : photo.comments.map((comment, index) => <ListGroup.Item key={index}>{comment}</ListGroup.Item>)} 
+          <ListGroup.Item><h3>All comments</h3></ListGroup.Item>
+          {(photo.comments) ? photo.comments.map((comment, index) => <ListGroup.Item key={index}>{comment}</ListGroup.Item>) : <ListGroup.Item>No comments yet!</ListGroup.Item>} 
         </ListGroup>
       </div>
-      <div className="mt-5">
+      <div className="add-comment mt-5">
         <h1>Please leave a comment</h1>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form noValidate validated={validated} onSubmit={makeComment}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" controlId="validationCustom01">
               <Form.Label>First name</Form.Label>
@@ -103,6 +109,7 @@ function Details() {
                   type="text"
                   placeholder="Username"
                   aria-describedby="inputGroupPrepend"
+                  onChange={onUserChange}
                   required
                 />
                 <Form.Control.Feedback type="invalid">
@@ -128,7 +135,7 @@ function Details() {
                 feedbackType="invalid"
               />
             </Form.Group>
-        <Button type="submit">Submit form</Button>
+        <Button type="submit" onSubmit={handleSubmit} >Submit form</Button>
       </Form>
       </div>
     </>

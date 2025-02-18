@@ -5,7 +5,10 @@
       "srcThumbnail": "assets/railway.jpg",
       "srcImage": "assets/railway.jpg",
       "title": "Railway to the end of the world",
-      "comments": [],
+      "comments": [
+        "@mesi14: Integer tellus turpis, blandit ut auctor eget, imperdiet id libero. Nam ut tempor est. Praesent tellus sapien, luctus eu cursus id, vestibulum eget arcu. Maecenas ut pharetra nibh, non accumsan nisl. Donec ligula mauris, efficitur nec libero quis, rhoncus consequat justo. In congue est non nisi pellentesque facilisis. Vestibulum semper eget augue eget sagittis. Donec lobortis tellus vel odio mattis feugiat. Vivamus efficitur porta erat in mollis. Maecenas vulputate sollicitudin arcu sit amet sagittis. Nullam efficitur feugiat suscipit. Sed non orci dui.",
+        "@huni342: Curabitur tempus porttitor erat, ut vulputate libero egestas ut. Pellentesque sollicitudin efficitur nunc, ac tincidunt erat vestibulum eget. Phasellus iaculis, mauris in efficitur accumsan, libero nisi scelerisque turpis, eu scelerisque quam felis quis sem. Cras vitae semper nibh, lobortis dictum orci. Donec imperdiet finibus erat, eu ultrices arcu dignissim et. Ut luctus purus ipsum, sit amet tristique elit vehicula eget. Phasellus tempor lorem at purus maximus posuere. Cras tempor leo sed facilisis sollicitudin. Etiam et erat nisl. Aliquam consectetur vel risus eget bibendum. Praesent ut tempus ex. Fusce in lectus non mauris porttitor dictum a nec neque. Pellentesque a condimentum enim. Cras faucibus lorem nec purus euismod, in suscipit est ultrices."
+      ],
       "shortDesc": "just a way",
       "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. sdgosdglidfa jhogi;hdjfiog hjrghiodfsoig hadfgo[i ahofdg l Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
@@ -50,16 +53,7 @@
       "srcThumbnail": "assets/water.jpg",
       "srcImage": "assets/water.jpg",
       "title": "The ocean",
-      "comments": [
-        "ws adgdsfgb",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "asdfb"
-      ],
+      "comments": [],
       "shortDesc": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
       "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
