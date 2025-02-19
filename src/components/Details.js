@@ -9,8 +9,7 @@ function Details() {
   const parameters = useParams();
   const [photo, setPhoto] = useState([]);
   const [validated, setValidated] = useState(false);
-  const [singleComment, setSingleComment] = useState("");
-  const [user, setUser] = useState("");
+  const [formData, setFormData] = useState({firstName: "", user: "", lastName: "", singleComment: "", agree: false});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,41 +23,38 @@ function Details() {
     fetchData();
   }, [parameters.imgId]);
   
-  const handleSubmit = (event) => {
+  const handleChange = (ev) => {
+    setFormData({...formData, [ev.target.name]: ev.target.value})
+  }
+
+  const handleCheckState = (ev) => {
+    setFormData({...formData, [ev.target.name]: ev.target.checked})
+  }
+
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    if (singleComment === "") {
+      setValidated(false);
       return;
     }
-    makeComment();
+    await makeComment(formData.user, formData.singleComment);
     setValidated(true);
+    setFormData({firstName: "", user: "", lastName: "", singleComment: "", agree: false})
+    setValidated(false);
   };
 
-  const makeComment = async () => {
+  const makeComment = async (user, singleComment) => {
     try {
       const currPhoto = { ...photo };
       currPhoto.comments.push(`@${user}: ${singleComment}`);
       setPhoto(currPhoto);
-      setSingleComment("");
-      setUser("");
       await axios.put(`http://localhost:3001/photos/${parameters.imgId}`, photo)
     } catch (error) {
       console.log("this is the error from making a comment", error);
     }
   }
-
-
-  const onTextAreaChange = (ev) => {
-    setSingleComment(ev.target.value);
-  }
-
-  const onUserChange = (ev) => {
-    setUser(ev.target.value)
-  }
-
+  console.log("agree", formData.agree)
   return (
     <>
       <div className="details-descript">
@@ -74,12 +70,12 @@ function Details() {
       <div className="comments">
         <ListGroup>
           <ListGroup.Item><h3>All comments</h3></ListGroup.Item>
-          {(photo.comments) ? photo.comments.map((comment, index) => <ListGroup.Item key={index}>{comment}</ListGroup.Item>) : <ListGroup.Item>No comments yet!</ListGroup.Item>} 
+          {(photo.comments?.length > 0) ? photo.comments.map((comment, index) => <ListGroup.Item key={index}>{comment}</ListGroup.Item>) : <ListGroup.Item>No comments yet!</ListGroup.Item>} 
         </ListGroup>
       </div>
       <div className="add-comment mt-5">
         <h1>Please leave a comment</h1>
-        <Form noValidate validated={validated} onSubmit={makeComment}>
+        <Form validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="4" controlId="validationCustom01">
               <Form.Label>First name</Form.Label>
@@ -87,7 +83,9 @@ function Details() {
                 required
                 type="text"
                 placeholder="First name"
-                defaultValue=""
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
               />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
@@ -97,7 +95,9 @@ function Details() {
                 required
                 type="text"
                 placeholder="Last name"
-                defaultValue=""
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
               />
               <Form.Control.Feedback>Valid!</Form.Control.Feedback>
             </Form.Group>
@@ -109,7 +109,9 @@ function Details() {
                   type="text"
                   placeholder="Username"
                   aria-describedby="inputGroupPrepend"
-                  onChange={onUserChange}
+                  onChange={handleChange}
+                  value={formData.user}
+                  name="user"
                   required
                 />
                 <Form.Control.Feedback type="invalid">
@@ -119,10 +121,13 @@ function Details() {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <FloatingLabel controlId="floatingTextarea2" label="Comments" onChange={onTextAreaChange}>
+            <FloatingLabel controlId="floatingTextarea2" label="Comments">
               <Form.Control
                 as="textarea"
                 placeholder="Leave a comment here"
+                onChange={handleChange}
+                value={formData.singleComment}
+                name="singleComment"
                 style={{ height: '100px' }}
               />
             </FloatingLabel>
@@ -133,9 +138,12 @@ function Details() {
                 label="Agree to terms and conditions"
                 feedback="You must agree before submitting."
                 feedbackType="invalid"
+                name="agree"
+                checked={formData.agree}
+                onChange={handleCheckState}
               />
             </Form.Group>
-        <Button type="submit" onSubmit={handleSubmit} >Submit form</Button>
+        <Button type="submit">Submit form</Button>
       </Form>
       </div>
     </>
