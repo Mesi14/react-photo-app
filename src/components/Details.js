@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import axios from "axios";
 
 function Details() {
-  const parameters = useParams();
+  const { imgId } = useParams();
   const [photo, setPhoto] = useState([]);
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({firstName: "", user: "", lastName: "", singleComment: "", agree: false});
@@ -14,14 +14,14 @@ function Details() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`http://localhost:3001/photos/${parameters.imgId}`);
+        const resp = await axios.get(`http://localhost:3001/photos/${imgId}`);
         setPhoto(resp.data);
       } catch (error) {
-        console.log("this error is from single photo page", error);
+        console.error(error);
       }
     };
     fetchData();
-  }, [parameters.imgId]);
+  }, [imgId]);
   
   const handleChange = (ev) => {
     setFormData({...formData, [ev.target.name]: ev.target.value})
@@ -49,12 +49,12 @@ function Details() {
       const currPhoto = { ...photo };
       currPhoto.comments.push(`@${user}: ${singleComment}`);
       setPhoto(currPhoto);
-      await axios.put(`http://localhost:3001/photos/${parameters.imgId}`, photo)
+      await axios.put(`http://localhost:3001/photos/${imgId}`, photo)
     } catch (error) {
-      console.log("this is the error from making a comment", error);
+      console.error(error);
     }
   }
-  console.log("agree", formData.agree)
+
   return (
     <>
       <div className="details-descript">
