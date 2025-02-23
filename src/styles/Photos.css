@@ -1,0 +1,15 @@
+.thumbnail {
+  width: 20rem;
+  min-height: 25rem;  
+}
+
+.card-body {
+  position: relative;
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
